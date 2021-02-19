@@ -1,2 +1,2 @@
 # swsw
-Foundry module for out Savage Worlds Star Wars games
+Foundry module for our Savage Worlds Star Wars games
