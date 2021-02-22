@@ -1,0 +1,8 @@
+{
+  "name": "swsw",
+  "title": "Savage Worlds Star Wars",
+  "description": "Content module for our games.",
+  "author": "Alex",
+  "version": "0.0.1",
+  "minimumCoreVersion": "0.7.9"
+}
