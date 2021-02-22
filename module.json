@@ -5,6 +5,6 @@
   "author": "Alex",
   "version": "0.0.1",
   "minimumCoreVersion": "0.7.9",
-  "manifest": "https://raw.githubusercontent.com/Alex76g/swsw/main/system.json",
+  "manifest": "https://raw.githubusercontent.com/Alex76g/swsw/main/module.json",
   "download": "https://github.com/Alex76g/swsw/archive/main.zip"
 }
