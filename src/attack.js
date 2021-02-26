@@ -496,13 +496,13 @@ async function damageResult(params) {
     // Alex Added
     // ----------
 
-    let isWeaponLaser = weapon.data.data.additionalStats != undefined && weapon.data.data.additionalStats.isLaserWeapon != undefined && weapon.data.data.additionalStats.isLaserWeapon.value;
-
-    let esArmors = currentTarget.items.filter((el) => el.type == "armor" && el.data.data.equipped && el.data.data.additionalStats != undefined && el.data.data.additionalStats.isEnergySkin != undefined && el.data.data.additionalStats.isEnergySkin.value);
-    if (isWeaponLaser && esArmors.length > 0) {
-         damageModPool.push({ mod: "energySkin", title: "Energy Skin", abilitie: 0, value: -4 });
-    }
-
+    // Energy Skin and LaserWeapon concepts are removed, but keeping them here for reference
+//    let isWeaponLaser = weapon.data.data.additionalStats != undefined && weapon.data.data.additionalStats.isLaserWeapon != undefined && weapon.data.data.additionalStats.isLaserWeapon.value;
+//
+//    let esArmors = currentTarget.items.filter((el) => el.type == "armor" && el.data.data.equipped && el.data.data.additionalStats != undefined && el.data.data.additionalStats.isEnergySkin != undefined && el.data.data.additionalStats.isEnergySkin.value);
+//    if (isWeaponLaser && esArmors.length > 0) {
+//         damageModPool.push({ mod: "energySkin", title: "Energy Skin", abilitie: 0, value: -4 });
+//    }
 
     let otherDmgMod = html.find("#damageMod");
     if (otherDmgMod.length > 0) {
