@@ -317,9 +317,9 @@ async function commitAttack(params) {
         skillModPool.push({ mod: "minStrength", title: i18n("swadeMacro.attack.skillMod.minStr"), abilitie: 0, value: weapon.data.data.minStr == "" ? 0 : diceStep.indexOf(weapon.data.data.minStr) > diceStep.indexOf(("d" + currentActor.data.data.attributes.strength.die.sides)) + minStrIncr ? diceStep.indexOf(("d" + currentActor.data.data.attributes.strength.die.sides)) + minStrIncr - diceStep.indexOf(weapon.data.data.minStr) : 0 });
     }
 
-    // Skill mod for Trademark Weapons
-    if (weapon.data.data.additionalStats.skillMod != undefined) {
-         skillModPool.push({ mod: "wpnSkillMod", title: "Weapon Attack Skill Mod", abilitie: 0, value: parseInt(weapon.data.data.additionalStats.skillMod.value) });
+    // Skill mod from Weapon
+    if (!isNaN(parseInt(weapon.data.data.actions.skillMod))) {
+         skillModPool.push({ mod: "wpnSkillMod", title: "Weapon Attack Skill Mod", abilitie: 0, value: parseInt(weapon.data.data.actions.skillMod) });
     }
     // General Attack mod for edges, that changed the attack mod (e.g. Mandalorian edge adds +1 to Fighting and Shooting)
     skillModPool.push({ mod: "atkSkillMod", title: "General Attack Skill Mod", abilitie: 0, value: parseInt(attackSkill.data.data.die.modifier) });
@@ -545,12 +545,12 @@ async function damageResult(params) {
                let regexDie = /d[4,6,8,10,12]/g;
 
                // If weapon damage-die is more, than str-die, then replace weapon damage die with @str
-               if (weaponDamage.match(regexDie).length > 0 && diceStep.indexOf(weaponDamage.match(regexDie)[0]) > diceStep.indexOf(("d" + currentActor.data.data.attributes.strength.die.sides))) {
+               if (null != weaponDamage.match(regexDie) && weaponDamage.match(regexDie).length > 0 && diceStep.indexOf(weaponDamage.match(regexDie)[0]) > diceStep.indexOf(("d" + currentActor.data.data.attributes.strength.die.sides))) {
                   weaponDamage = weaponDamage.replace(regexDie, "@str");
                }
                // Update @str from Strength dice
                let regexStr = /[@]str/g;
-               weaponDamage = weaponDamage.replace(regexStr, "d" + currentActor.data.data.attributes.strength.die.sides)
+               weaponDamage = weaponDamage.replace(regexStr, "d" + currentActor.data.data.attributes.strength.die.sides + "+" + currentActor.data.data.attributes.strength.die.modifier)
             }
             // --------------------
             // Alex Added ends here
