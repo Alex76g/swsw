@@ -39,7 +39,7 @@ async function useConvictionForm() {
                                 actor: params.currentActor,
                                 alias: params.currentActor.name,
                             },
-                            content: params.strings.forceStatement.
+                            content: params.strings.forceStatement
                         }, {});
                     }
                 },
