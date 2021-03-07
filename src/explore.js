@@ -2,7 +2,7 @@ console.log("belül:", params);
 
 params.sz = 5;
 
-return {
+var result = {
    egyik = params.egyik || "egyik placeholder",
    masik = params.masik || "masik placeholder",
    harmadik = params.harmadik || "harmadik placeholder",
