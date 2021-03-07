@@ -1,16 +1,16 @@
 // This code snippet invokes another js code and even passes (returns?) parameters
 var egySzoveg = "ez egy szöveg";
 var masikSzoveg = "ez meg egy másik";
-var ft = 42;
+var szam = 3;
 
 var complexData = {
    egyik: egySzoveg,
    masik: masikSzoveg,
    inline: "inline szöveg",
-   answer: ft
+   sz: szam
 };
 
-console.log("előtte:", complexData);
+var received;
 
 // This code-snippet invokes another js code
 fetch("modules/swsw/src/explore.js")
@@ -22,7 +22,9 @@ fetch("modules/swsw/src/explore.js")
 //    var myFunc =  new Function("params", loadedFunctionBody);
 //    myFunc(complexData);
 
-    new Function("params", loadedFunctionBody)(complexData);
+    received = new Function("params", loadedFunctionBody)(complexData);
 });
 
-console.log("utána:", complexData);
+console.log(received);
+
+console.log("kapott függvény felhasználva:", received.doubleFn(complexData.sz));

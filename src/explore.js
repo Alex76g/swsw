@@ -1,14 +1,13 @@
 console.log("belül:", params);
-console.log("belül a harmadik:", params.harmadik);
 
-params.egyik = params.egyik || "egyik placeholder";
-params.masik = params.masik || "masik placeholder";
+params.sz = 5;
 
-params.harmadik = params.harmadik || "harmadik placeholder";
-console.log("belül a harmadik a végén:", params.harmadik);
+result.egyik = params.egyik || "egyik placeholder";
+result.masik = params.masik || "masik placeholder";
+result.harmadik = params.harmadik || "harmadik placeholder";
 
-//function remoteFn(){
-//    console.log("invoked");
-//}
-//
-//return remoteFn;
+result.doubleFn = function(x){
+   return 2*x;
+}
+
+return result;
