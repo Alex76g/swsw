@@ -1,5 +1,7 @@
-console.log(passedParam);
+console.log(params);
 
-function remoteFn(){
-    console.log("invoked");
-}
+//function remoteFn(){
+//    console.log("invoked");
+//}
+//
+//return remoteFn;
