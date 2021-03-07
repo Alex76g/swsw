@@ -10,7 +10,7 @@ var complexData = {
    sz: szam
 };
 
-fetch("modules/swsw/src/invoke_3inside.js")
+fetch("modules/swsw/src/invoke_4inside.js")
   .then(function(response) {
     return response.text();
   }).then(function(loadedFunctionBody) {
@@ -21,7 +21,5 @@ fetch("modules/swsw/src/invoke_3inside.js")
 
     return new Function("params", loadedFunctionBody)(complexData);
   }).then(function(response) {
-    // Here we continue, when the promise is fulfilled (settled)
-    console.log("eredmény:", response);
-    console.log("például a harmadik:", response.harmadik);
+    console.log("fv alkalmazása után:", response.doubleFn(complexData.sz));
 });
