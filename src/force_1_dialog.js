@@ -5,26 +5,44 @@ new Dialog({
         force: {
             label: params.strings.forceButton,
             callback: async (html) => {
-                useConvictionForm(html);
+                useConvictionForm();
             }
         },
         redemption: {
             label: params.strings.redemptionButton,
             callback: async (html) => {
-                redemptionForm(html);
+                redemptionForm();
             }
         },
         darkside: {
             label: params.strings.darksideButton,
             callback: async (html) => {
-                darksideForm(html);
+                darksideForm();
             }
         }
     },
 }, { width: 400 }).render(true);
 
 async function useConvictionForm() {
-    console.log("conviction", params);
+    if(params.currentActor.data.data.details.conviction.value > 0){
+        new Dialog({
+            title: params.strings.dialogTitle + " - Conviction",
+            content: "Biztos, hogy elköltesz egy Conviction pontot?",
+            buttons: {
+                yes: {
+                    label: "Igen",
+                    callback: async (html) => {
+                        params.currentActor.data.data.details.conviction.value--;
+                    }
+                },
+                no: {
+                    label: "Nem"
+                },
+            },
+        }, { width: 400 }).render(true);
+    } else {
+        console.log("asdf");
+    }
 }
 
 async function redemptionForm() {
