@@ -9,4 +9,4 @@ return {
    doubleFn = function(x){
       return 2*x;
    }
-}
+};
