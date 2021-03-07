@@ -3,7 +3,7 @@
   "title": "Savage Worlds Star Wars",
   "description": "Content module for our games.",
   "author": "Alex",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "minimumCoreVersion": "0.7.9",
   "compatibleCoreVersion": "0.7.9",
   "manifest": "https://raw.githubusercontent.com/Alex76g/swsw/main/module.json",
