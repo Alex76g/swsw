@@ -10,6 +10,8 @@ var complexData = {
    sz: szam
 };
 
+var received;
+
 fetch("modules/swsw/src/invoke_2inside.js")
   .then(function(response) {
     return response.text();
@@ -19,5 +21,7 @@ fetch("modules/swsw/src/invoke_2inside.js")
 //    var myFunc =  new Function("params", loadedFunctionBody);
 //    myFunc(complexData);
 
-    new Function("params", loadedFunctionBody)(complexData);
+    received = new Function("params", loadedFunctionBody)(complexData);
 });
+
+console.log("eredmény:", received);
