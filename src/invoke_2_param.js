@@ -12,8 +12,7 @@ var complexData = {
 
 var received;
 
-// This code-snippet invokes another js code
-fetch("modules/swsw/src/explore.js")
+fetch("modules/swsw/src/invoke_2inside.js")
   .then(function(response) {
     return response.text();
   }).then(function(loadedFunctionBody) {
@@ -22,9 +21,5 @@ fetch("modules/swsw/src/explore.js")
 //    var myFunc =  new Function("params", loadedFunctionBody);
 //    myFunc(complexData);
 
-    received = new Function("params", loadedFunctionBody)(complexData);
+    new Function("params", loadedFunctionBody)(complexData);
 });
-
-console.log(received);
-
-console.log("kapott függvény felhasználva:", received.doubleFn(complexData.sz));
