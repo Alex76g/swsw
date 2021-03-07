@@ -1,6 +1,6 @@
 var strings = {
    dialogTitle: params.dialogTitle || "Erőhasználat",
-   dialogContent: params.dialogContent,
+   dialogContent: params.dialogContent || "",
    forceButton: params.forceButton || "Velem van az erő",
    redemptionButton: params.redemptionButton || "A világos ösvényre lépek",
    darksideButton: params.darksideButton || "A sötét oldalhoz fordulok segítségért",
