@@ -4,4 +4,4 @@ var result = {
    harmadik: params.harmadik || "harmadik placeholder"
 };
 
-result;
+return result;

@@ -12,7 +12,7 @@ var complexData = {
 
 var received;
 
-fetch("modules/swsw/src/invoke_2inside.js")
+fetch("modules/swsw/src/invoke_3inside.js")
   .then(function(response) {
     return response.text();
   }).then(function(loadedFunctionBody) {
