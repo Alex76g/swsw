@@ -1,6 +1,6 @@
 var strings = {
    dialogTitle: "Erőhasználat",
-   dialogContent: undefined,
+   dialogContent: "",
    forceButton: "Velem van az erő",
    redemptionButton: "A világos ösvényre lépek",
    darksideButton: "A sötét oldalhoz fordulok segítségért",
