@@ -27,12 +27,20 @@ async function useConvictionForm() {
     if(params.currentActor.data.data.details.conviction.value > 0){
         new Dialog({
             title: params.strings.dialogTitle + " - Conviction",
-            content: "Biztos, hogy elköltesz egy Conviction pontot?",
+            content: "Biztos, hogy elköltesz egy Conviction pontot? (Jelenleg "
+                + params.currentActor.data.data.details.conviction.value + " pontod van.)",
             buttons: {
                 yes: {
                     label: "Igen",
                     callback: async (html) => {
                         params.currentActor.data.data.details.conviction.value--;
+                        ChatMessage.create({
+                            speaker: {
+                                actor: params.currentActor,
+                                alias: params.currentActor.name,
+                            },
+                            content: params.strings.forceStatement.
+                        }, {});
                     }
                 },
                 no: {
@@ -41,7 +49,7 @@ async function useConvictionForm() {
             },
         }, { width: 400 }).render(true);
     } else {
-        console.log("asdf");
+        ui.notifications.warn("Nincs egy Conviction pontod sem, hogy ezt választhasd.");
     }
 }
 
